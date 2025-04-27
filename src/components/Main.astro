@@ -1,0 +1,36 @@
+---
+import { Client, Account } from "appwrite";
+
+
+const client = new Client();
+client
+    .setEndpoint('http://localhost/v1')
+    .setProject('680d7b91001df6001455');
+
+---
+<script define:vars={{ client }}>
+    const login = () => {
+        console.log('Login clicked');
+        const account = new Account(client);
+        const promise = account.createEmailPasswordSession('test@test.com', 'password');
+
+        promise.then(function (response) {
+            console.log(response); // Success
+        }, function (error) {
+            console.log(error); // Failure
+        });
+    }
+
+    const loginButton = document.querySelector("#login");
+    loginButton.addEventListener("click", () => {
+        login();
+    });
+    
+</script>
+<div>
+    Hi There!
+    <br>
+    <input type="text" placeholder="Enter your email" />
+    <input type="password" placeholder="Enter your password" />
+    <button id="login">Login</button>
+</div>

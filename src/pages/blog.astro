@@ -1,5 +1,6 @@
 ---
-import Navigator from '../components/Navigator.astro';
+import Navigator from "../components/Navigator.astro";
+const pageTitle = 'Blog';
 ---
 
 <html lang="en">
@@ -8,21 +9,78 @@ import Navigator from '../components/Navigator.astro';
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Blog</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
-        <Navigator/>
+        <Navigator />
 
         <h1>Welcome to Our Blog</h1>
-        <p>Stay updated with the latest news, insights, and stories from our team. We share articles on a variety of topics to keep you informed and inspired.</p>
+        <p>
+            Stay updated with the latest news, insights, and stories from our team. We share articles on a variety of topics to keep you informed and inspired.
+        </p>
 
         <h2>Recent Posts</h2>
         <ul>
-            <li><a href="#">Post Title 1</a> - A brief description of the first post.</li>
-            <li><a href="#">Post Title 2</a> - A brief description of the second post.</li>
-            <li><a href="#">Post Title 3</a> - A brief description of the third post.</li>
+            <li>
+                <a href="/posts/post-1">Post Title 1</a> - A brief description of the first post.
+            </li>
+            <li>
+                <a href="/posts/post-2">Post Title 2</a> - A brief description of the second post.
+            </li>
+            <li>
+                <a href="/posts/post-3">Post Title 3</a> - A brief description of the third post.
+            </li>
         </ul>
 
-        <p>Check back often for new content, or subscribe to our newsletter to never miss an update!</p>
+        <p>
+            Check back often for new content, or subscribe to our newsletter to never miss an update!
+        </p>
+
+        <section>
+            <h3>Project Structure</h3>
+            <p>Develop and build configuration overview, editor setup, TypeScript, environment variables, and dev toolbar.</p>
+        </section>
+
+        <section>
+            <h3>Tutorial Tracker</h3>
+            <ul>
+                <li>Unit 0: 2/2 Complete</li>
+                <li>Unit 1: 6/6 Complete</li>
+                <li>Unit 2: 2/6 Complete</li>
+                <li>Unit 3: 0/5 Complete</li>
+                <li>Unit 4: 0/4 Complete</li>
+                <li>Unit 5: 0/5 Complete</li>
+                <li>Unit 6: 0/5 Complete</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>To-Do List</h3>
+            <ul>
+                <li>Add, style, and link to pages on your site</li>
+                <li>Write your first Markdown blog post</li>
+                <li>Add dynamic content about you</li>
+                <li>Style your About page</li>
+                <li>Add site-wide styling</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Learn Astro with Coding in Public</h3>
+            <p>150+ video lessons • Astro v5 ready • Get 20% off</p>
+        </section>
+
+        <section>
+            <h3>Write Your First Markdown Blog Post</h3>
+            <ol>
+                <li>Create a new directory at <code>src/pages/posts/</code>.</li>
+                <li>Add a new (empty) file <code>post-1.md</code> inside your new <code>/posts/</code> folder.</li>
+                <li>Preview the page in your browser by adding <code>/posts/post-1</code> to the end of your existing preview URL (e.g., <code>http://localhost:4321/posts/post-1</code>).</li>
+                <li>Write Markdown content for your post.</li>
+            </ol>
+            <p>
+                Note: The information at the top of the file, inside the code fences, is called frontmatter. This data—including tags and a post image—is information about your post that Astro can use. It does not appear on the page automatically, but you will access it later in the tutorial to enhance your site.
+            </p>
+        </section>
     </body>
 </html>

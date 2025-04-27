@@ -1,5 +1,6 @@
 ---
 import Navigator from '../components/Navigator.astro';
+const pageTitle = 'Welcome';
 ---
 
 <html lang="en">
@@ -8,10 +9,37 @@ import Navigator from '../components/Navigator.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <Navigator/>
 		<h1>My Astro Site</h1>
+		<p>Welcome to my Astro site! This is a space where creativity meets technology, and we explore the endless possibilities of the web.</p>
+
+        <section>
+            <h2>About This Site</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Mi deh yah a build dis site fi show di power a Astro. Yuh si how it fast an flexible? Mi love it!</p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Fast and efficient performance</li>
+                <li>Easy to use and customize</li>
+                <li>Supports modern web standards</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <p>If yuh waan link wi, just drop a message pon di contact page. Wi deh yah fi help yuh wid anything yuh need.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 My Astro Site. All rights reserved.</p>
+        </footer>
 	</body>
 </html>

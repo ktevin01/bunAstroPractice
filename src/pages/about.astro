@@ -1,5 +1,19 @@
 ---
-import Navigator from '../components/Navigator.astro';
+import Navigator from "../components/Navigator.astro";
+const pageTitle = "About Me";
+
+const identity = {
+    firstName: "Tevin",
+    country: "Jamaica",
+    occupation: "Software Developer",
+    hobbies: ["reading", "gaming", "music listening"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "SQL"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,17 +22,67 @@ import Navigator from '../components/Navigator.astro';
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>About</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
-        <Navigator/>
-        <h1>About Us</h1>
-        <p>Welcome to our website! We are dedicated to providing high-quality services and solutions to meet your needs. Our team is passionate about innovation, excellence, and delivering value to our customers.</p>
-        <p>Founded in [Year], we have grown into a trusted name in the industry, thanks to our commitment to integrity and customer satisfaction. Whether you're looking for [specific services/products] or just want to learn more about what we do, you've come to the right place.</p>
-        <p>Feel free to explore our website to learn more about our mission, vision, and the values that drive us forward. If you have any questions or would like to get in touch, don't hesitate to contact us.</p>
-        <h2>Our Mission</h2>
-        <p>Our mission is to [insert mission statement, e.g., "empower individuals and businesses through innovative solutions and exceptional service"].</p>
-        <h2>Our Vision</h2>
-        <p>We envision a future where [insert vision statement, e.g., "technology and creativity come together to solve the world's challenges"].</p>
+        <Navigator />
+        <h1>{pageTitle}</h1>
+
+        <p>Here are a few facts about me:</p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>
+                I live in {identity.country} and I work as a {
+                    identity.occupation
+                }.
+            </li>
+            {
+                identity.hobbies.length >= 2 && (
+                    <li>
+                        Two of my hobbies are: {identity.hobbies[0]} and{" "}
+                        {identity.hobbies[1]}
+                    </li>
+                )
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+        <p>
+            With this page I wish to welcome you to my personal website! I am passionate about innovation,
+            excellence, and delivering value in everything I do. This space is
+            dedicated to sharing my journey, experiences, and the things that
+            inspire me.
+        </p>
+        <p>
+            With a background in computer science and software engineering, I have honed my skills
+            and grown into a professional who values integrity and continuous
+            learning. Whether you're here to learn more about my work,
+            interests, or just to connect, I'm glad you stopped by.
+        </p>
+        <p>
+            Feel free to explore my website to learn more about my mission,
+            vision, and the values that drive me forward. If you have any
+            questions or would like to get in touch, don't hesitate to contact
+            me.
+        </p>
+        <h2>My Mission</h2>
+        <p>
+            My mission is to empower
+            individuals and businesses through innovative solutions and
+            exceptional service.
+        </p>
+        <h2>My Vision</h2>
+        <p>
+            I envision a future where technology and creativity come together to solve the world's
+            challenges.
+        </p>
+
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
+        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
     </body>
 </html>
